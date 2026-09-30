@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Your Cart | BYEIT</title>
+
+    <link
+        rel="stylesheet"
+        href="cart.css"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+
+        <a
+            href="index.html"
+            class="logo"
+        >
+            BYEIT
+        </a>
+
+
+        <nav>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="index.html#categories">
+                Categories
+            </a>
+
+            <a href="index.html#products">
+                Products
+            </a>
+
+            <a href="index.html#deals">
+                Deals
+            </a>
+
+        </nav>
+
+
+        <div class="nav-actions">
+
+            <a
+                href="cart.html"
+                class="cart-button"
+            >
+
+                <span class="cart-icon">
+                    🛒
+                </span>
+
+                <span>
+                    Cart
+                </span>
+
+            </a>
+
+
+            <button
+                id="profileButton"
+                class="profile-button"
+                onclick="openProfile()"
+            >
+                Sign In
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- CART PAGE -->
+
+    <main class="cart-page">
+
+
+        <!-- PAGE HEADER -->
+
+        <div class="cart-page-header">
+
+            <div>
+
+                <span class="small-label">
+                    YOUR SHOPPING BAG
+                </span>
+
+                <h1>
+                    Your Cart
+                </h1>
+
+                <p>
+                    Review your items before checkout.
+                </p>
+
+            </div>
+
+
+            <a
+                href="index.html#products"
+                class="continue-shopping"
+            >
+                ← Continue Shopping
+            </a>
+
+        </div>
+
+
+        <!-- CART CONTENT -->
+
+        <div class="cart-layout">
+
+
+            <!-- LEFT SIDE -->
+
+            <section class="cart-items-section">
+
+                <div class="section-heading">
+
+                    <h2>
+                        Cart Items
+                    </h2>
+
+                    <span id="cartItemCount">
+                        0 items
+                    </span>
+
+                </div>
+
+
+                <div
+                    id="cartItems"
+                    class="cart-items"
+                >
+
+                    <!-- Products will appear here -->
+
+                    <div class="empty-cart">
+
+                        <div class="empty-cart-icon">
+                            🛒
+                        </div>
+
+                        <h3>
+                            Your cart is empty
+                        </h3>
+
+                        <p>
+                            Looks like you haven't added
+                            anything yet.
+                        </p>
+
+                        <a
+                            href="index.html#products"
+                            class="primary-button"
+                        >
+                            Start Shopping
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- RIGHT SIDE -->
+
+            <aside class="order-summary">
+
+                <div class="summary-header">
+
+                    <span class="small-label">
+                        ORDER SUMMARY
+                    </span>
+
+                    <h2>
+                        Summary
+                    </h2>
+
+                </div>
+
+
+                <div class="summary-details">
+
+                    <div class="summary-row">
+
+                        <span>
+                            Subtotal
+                        </span>
+
+                        <strong id="cartSubtotal">
+                            ₹0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="summary-row">
+
+                        <span>
+                            Delivery
+                        </span>
+
+                        <strong class="free">
+                            FREE
+                        </strong>
+
+                    </div>
+
+
+                    <div class="summary-row">
+
+                        <span>
+                            Discount
+                        </span>
+
+                        <strong id="cartDiscount">
+                            ₹0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="summary-divider"></div>
+
+
+                <div class="summary-total">
+
+                    <span>
+                        Total
+                    </span>
+
+                    <strong id="cartTotal">
+                        ₹0
+                    </strong>
+
+                </div>
+
+
+                <button
+                class="checkout-button"
+                onclick="window.location.href='checkout.html'"
+            >
+                Proceed to Checkout
+                <span>→</span>
+            </button>
+
+
+                <div class="secure-note">
+
+                    <span>
+                        🔒
+                    </span>
+
+                    <p>
+                        Secure checkout and
+                        protected payment.
+                    </p>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <div class="footer-content">
+
+            <div>
+
+                <div class="footer-logo">
+                    BYEIT
+                </div>
+
+                <p>
+                    Shop what you love.
+                </p>
+
+            </div>
+
+
+            <p class="footer-copy">
+                © 2026 BYEIT. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="cart.js"></script>
+    <script>
+    function openProfile() {
+
+        let loggedIn =
+            localStorage.getItem("byeItLoggedIn");
+
+        if (loggedIn === "true") {
+
+            window.location.href =
+                "profile.html";
+
+        } else {
+
+            window.location.href =
+                "login.html";
+        }
+    }
+
+    let profileButton =
+        document.getElementById("profileButton");
+
+    if (profileButton) {
+
+        let loggedIn =
+            localStorage.getItem("byeItLoggedIn");
+
+        if (loggedIn === "true") {
+
+            profileButton.innerText =
+                "Profile";
+        }
+    }
+</script>
+
+</body>
+
+</html>

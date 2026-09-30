@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Checkout | BYEIT</title>
+
+    <link
+        rel="stylesheet"
+        href="checkout.css"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+
+        <a
+            href="index.html"
+            class="logo"
+        >
+            BYEIT
+        </a>
+
+
+        <nav>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="index.html#categories">
+                Categories
+            </a>
+
+            <a href="index.html#products">
+                Products
+            </a>
+
+            <a href="index.html#deals">
+                Deals
+            </a>
+
+        </nav>
+
+
+        <div class="nav-actions">
+
+            <a
+                href="cart.html"
+                class="cart-button"
+            >
+                🛒 Cart
+            </a>
+
+            <a
+                href="login.html"
+                class="profile-button"
+            >
+                Profile
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- CHECKOUT -->
+
+    <main class="checkout-page">
+
+
+        <!-- PAGE HEADER -->
+
+        <div class="checkout-header">
+
+            <span class="small-label">
+                SECURE CHECKOUT
+            </span>
+
+            <h1>
+                Complete your order
+            </h1>
+
+            <p>
+                Enter your details and review your order before placing it.
+            </p>
+
+        </div>
+
+
+        <!-- CHECKOUT LAYOUT -->
+
+        <div class="checkout-layout">
+
+
+            <!-- LEFT SIDE -->
+
+            <section class="checkout-form-card">
+
+                <div class="section-title">
+
+                    <h2>
+                        Delivery Details
+                    </h2>
+
+                    <span>
+                        01
+                    </span>
+
+                </div>
+
+
+                <form id="checkoutForm">
+
+
+                    <!-- FULL NAME -->
+
+                    <div class="form-group">
+
+                        <label for="fullName">
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="fullName"
+                            placeholder="Enter your full name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- EMAIL -->
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- PHONE -->
+
+                    <div class="form-group">
+
+                        <label for="phone">
+                            Phone Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            placeholder="Enter your phone number"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- ADDRESS -->
+
+                    <div class="form-group">
+
+                        <label for="address">
+                            Address
+                        </label>
+
+                        <textarea
+                            id="address"
+                            placeholder="Enter your complete address"
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <!-- CITY + PIN -->
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="city">
+                                City
+                            </label>
+
+                            <input
+                                type="text"
+                                id="city"
+                                placeholder="City"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="pincode">
+                                PIN Code
+                            </label>
+
+                            <input
+                                type="text"
+                                id="pincode"
+                                placeholder="PIN Code"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PAYMENT -->
+
+                    <div class="section-title payment-title">
+
+                        <h2>
+                            Payment Method
+                        </h2>
+
+                        <span>
+                            02
+                        </span>
+
+                    </div>
+
+
+                    <div class="payment-options">
+
+
+                        <label class="payment-option">
+
+                            <input
+                                type="radio"
+                                name="payment"
+                                value="cod"
+                                checked
+                            >
+
+                            <div>
+
+                                <strong>
+                                    Cash on Delivery
+                                </strong>
+
+                                <span>
+                                    Pay when your order arrives.
+                                </span>
+
+                            </div>
+
+                        </label>
+
+
+                        <label class="payment-option">
+
+                            <input
+                                type="radio"
+                                name="payment"
+                                value="online"
+                            >
+
+                            <div>
+
+                                <strong>
+                                    Online Payment
+                                </strong>
+
+                                <span>
+                                    Secure online payment.
+                                </span>
+
+                            </div>
+
+                        </label>
+
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="place-order-button"
+                    >
+                        Place Order
+                        <span>→</span>
+                    </button>
+
+
+                    <p
+                        id="checkoutMessage"
+                        class="checkout-message"
+                    ></p>
+
+
+                </form>
+
+            </section>
+
+
+            <!-- RIGHT SIDE -->
+
+            <aside class="order-summary">
+
+                <div class="summary-header">
+
+                    <span class="small-label">
+                        YOUR ORDER
+                    </span>
+
+                    <h2>
+                        Order Summary
+                    </h2>
+
+                </div>
+
+
+                <div
+                    id="checkoutItems"
+                    class="checkout-items"
+                >
+                    <!-- Items loaded by JavaScript -->
+                </div>
+
+
+                <div class="summary-divider"></div>
+
+
+                <div class="summary-row">
+
+                    <span>
+                        Subtotal
+                    </span>
+
+                    <strong id="checkoutSubtotal">
+                        ₹0
+                    </strong>
+
+                </div>
+
+
+                <div class="summary-row">
+
+                    <span>
+                        Delivery
+                    </span>
+
+                    <strong class="free">
+                        FREE
+                    </strong>
+
+                </div>
+
+
+                <div class="summary-row">
+
+                    <span>
+                        Discount
+                    </span>
+
+                    <strong id="checkoutDiscount">
+                        ₹0
+                    </strong>
+
+                </div>
+
+
+                <div class="summary-divider"></div>
+
+
+                <div class="summary-total">
+
+                    <span>
+                        Total
+                    </span>
+
+                    <strong id="checkoutTotal">
+                        ₹0
+                    </strong>
+
+                </div>
+
+
+                <div class="secure-note">
+
+                    <span>
+                        🔒
+                    </span>
+
+                    <p>
+                        Your order details are securely processed.
+                    </p>
+
+                </div>
+
+
+            </aside>
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <div class="footer-content">
+
+            <div>
+
+                <div class="footer-logo">
+                    BYEIT
+                </div>
+
+                <p>
+                    Shop what you love.
+                </p>
+
+            </div>
+
+
+            <p class="footer-copy">
+                © 2026 BYEIT. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="checkout.js"></script>
+
+</body>
+
+</html>

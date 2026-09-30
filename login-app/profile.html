@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>My Profile | BYEIT</title>
+
+    <link
+        rel="stylesheet"
+        href="profile.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         NAVBAR
+         ========================================= -->
+
+    <header class="navbar">
+
+
+        <a
+            href="index.html"
+            class="logo"
+        >
+            BYEIT
+        </a>
+
+
+        <nav>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="index.html#categories">
+                Categories
+            </a>
+
+            <a href="index.html#products">
+                Products
+            </a>
+
+            <a href="index.html#deals">
+                Deals
+            </a>
+
+        </nav>
+
+
+        <div class="nav-actions">
+
+            <a
+                href="cart.html"
+                class="cart-button"
+            >
+                🛒 Cart
+            </a>
+
+
+            <a
+                href="profile.html"
+                class="profile-button"
+            >
+                Profile
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================
+         PROFILE PAGE
+         ========================================= -->
+
+    <main class="profile-page">
+
+
+        <!-- PAGE HEADER -->
+
+        <div class="profile-header">
+
+            <span class="small-label">
+                MY ACCOUNT
+            </span>
+
+            <h1>
+                Your Profile
+            </h1>
+
+            <p>
+                Manage your account and personal information.
+            </p>
+
+        </div>
+
+
+
+        <!-- =========================================
+             PROFILE LAYOUT
+             ========================================= -->
+
+        <div class="profile-layout">
+
+
+            <!-- =====================================
+                 LEFT PROFILE CARD
+                 ===================================== -->
+
+            <section class="profile-card">
+
+
+                <div class="profile-top">
+
+
+                    <div class="profile-avatar">
+                        <span id="avatarLetter">
+                            U
+                        </span>
+                    </div>
+
+
+                    <div class="profile-main-info">
+
+                        <h2 id="profileName">
+                            User
+                        </h2>
+
+                        <p id="profileEmail">
+                            user@example.com
+                        </p>
+
+                        <span class="account-status">
+                            Active Account
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="profile-divider"></div>
+
+
+
+                <!-- PERSONAL INFORMATION -->
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="small-label">
+                            PERSONAL DETAILS
+                        </span>
+
+                        <h2>
+                            Account Information
+                        </h2>
+
+                    </div>
+
+                    <span class="section-number">
+                        01
+                    </span>
+
+                </div>
+
+
+
+                <form id="profileForm">
+
+
+                    <div class="form-row">
+
+
+                        <div class="form-group">
+
+                            <label for="fullName">
+                                Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="fullName"
+                                placeholder="Enter your full name"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="email">
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                disabled
+                            >
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="form-row">
+
+
+                        <div class="form-group">
+
+                            <label for="phone">
+                                Phone Number
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                placeholder="Enter your phone number"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="city">
+                                City
+                            </label>
+
+                            <input
+                                type="text"
+                                id="city"
+                                placeholder="Enter your city"
+                            >
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label for="address">
+                            Delivery Address
+                        </label>
+
+                        <textarea
+                            id="address"
+                            placeholder="Enter your delivery address"
+                        ></textarea>
+
+                    </div>
+
+
+
+                    <button
+                        type="submit"
+                        class="save-button"
+                    >
+                        Save Changes
+                    </button>
+
+
+                    <p
+                        id="profileMessage"
+                        class="profile-message"
+                    ></p>
+
+
+                </form>
+
+            </section>
+
+
+
+            <!-- =====================================
+                 RIGHT SIDEBAR
+                 ===================================== -->
+
+            <aside class="profile-sidebar">
+
+
+                <!-- ORDERS -->
+
+                <div class="side-card">
+
+                    <div class="side-icon">
+                        📦
+                    </div>
+
+                    <div class="side-content">
+
+                        <h3>
+                            My Orders
+                        </h3>
+
+                        <p>
+                            View your previous and current orders.
+                        </p>
+
+                    </div>
+
+                    <span class="side-arrow">
+                        →
+                    </span>
+
+                </div>
+
+
+
+                <!-- CART -->
+
+                <div
+                    class="side-card clickable"
+                    onclick="window.location.href='cart.html'"
+                >
+
+                    <div class="side-icon">
+                        🛒
+                    </div>
+
+                    <div class="side-content">
+
+                        <h3>
+                            Shopping Cart
+                        </h3>
+
+                        <p>
+                            Review products saved in your cart.
+                        </p>
+
+                    </div>
+
+                    <span class="side-arrow">
+                        →
+                    </span>
+
+                </div>
+
+
+
+                <!-- SECURITY -->
+
+                <div class="side-card">
+
+                    <div class="side-icon">
+                        🔒
+                    </div>
+
+                    <div class="side-content">
+
+                        <h3>
+                            Account Security
+                        </h3>
+
+                        <p>
+                            Your account information is protected.
+                        </p>
+
+                    </div>
+
+                    <span class="security-status">
+                        Secure
+                    </span>
+
+                </div>
+
+
+
+                <!-- LOGOUT -->
+
+                <button
+                    class="logout-button"
+                    onclick="logout()"
+                >
+                    Sign Out
+                </button>
+
+
+            </aside>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =========================================
+         FOOTER
+         ========================================= -->
+
+    <footer class="footer">
+
+        <div class="footer-content">
+
+
+            <div>
+
+                <div class="footer-logo">
+                    BYEIT
+                </div>
+
+                <p>
+                    Shop what you love.
+                </p>
+
+            </div>
+
+
+            <p class="footer-copy">
+                © 2026 BYEIT. All rights reserved.
+            </p>
+
+
+        </div>
+
+    </footer>
+
+
+
+    <script src="profile.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BYEIT | Shopping</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            BYEIT
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#categories">Categories</a>
+            <a href="#products">Products</a>
+            <a href="#deals">Deals</a>
+        </nav>
+
+        <div class="nav-actions">
+
+            <a href="cart.html" class="icon-button">
+    🛒
+    <span id="cartCount">0</span>
+</a>
+
+<button
+    id="profileButton"
+    class="profile-button"
+    onclick="openProfile()"
+>
+    Sign In
+</button>
+
+        </div>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <main>
+
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+
+                <span class="small-label">
+                    NEW COLLECTION
+                </span>
+
+                <h1>
+                    Shop what<br>
+                    <span>you love.</span>
+                </h1>
+
+                <p>
+                    Discover products you'll love,
+                    all in one simple shopping experience.
+                </p>
+
+                <button class="primary-button" onclick="scrollToProducts()">
+                    Shop Now →
+                </button>
+
+            </div>
+
+<div class="hero-card">
+
+    <div class="hero-circle"></div>
+
+    <div class="hero-product">
+
+        <img
+            src="images/headphones.png"
+            alt="Wireless Headphones"
+        >
+
+    </div>
+
+    <div class="floating-price">
+
+        <span>Featured</span>
+
+        <strong>₹2,499</strong>
+
+    </div>
+
+</div>
+
+                <div class="floating-price">
+                    <span>Featured</span>
+                    <strong>₹2,499</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CATEGORIES -->
+
+        <section class="section" id="categories">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="small-label">
+                        EXPLORE
+                    </span>
+
+                    <h2>Shop by category</h2>
+                </div>
+
+                <a href="#products">View all →</a>
+
+            </div>
+
+
+            <div class="categories">
+
+                <div class="category-card">
+                    <div class="category-icon">⌁</div>
+                    <h3>Electronics</h3>
+                    <p>120+ products</p>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">◇</div>
+                    <h3>Fashion</h3>
+                    <p>250+ products</p>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">✦</div>
+                    <h3>Beauty</h3>
+                    <p>90+ products</p>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">□</div>
+                    <h3>Home</h3>
+                    <p>180+ products</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PRODUCTS -->
+
+       <!-- PRODUCTS -->
+
+<section class="section" id="products">
+
+    <div class="section-heading">
+
+        <div>
+            <span class="small-label">
+                TRENDING NOW
+            </span>
+
+            <h2>Popular products</h2>
+        </div>
+
+        <div class="filter-buttons">
+
+            <button class="filter active"
+                onclick="filterProducts('all', this)">
+                All
+            </button>
+
+            <button class="filter"
+                onclick="filterProducts('electronics', this)">
+                Electronics
+            </button>
+
+            <button class="filter"
+                onclick="filterProducts('fashion', this)">
+                Fashion
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="products" id="productContainer">
+
+
+        <!-- HEADPHONES -->
+
+        <div class="product-card" data-category="electronics">
+
+            <div class="product-image">
+
+                <span class="discount">-20%</span>
+
+                <img
+                    src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80"
+                    alt="Wireless Headphones"
+                >
+
+            </div>
+
+            <div class="product-info">
+
+                <span class="product-category">
+                    ELECTRONICS
+                </span>
+
+                <h3>Wireless Headphones</h3>
+
+                <div class="rating">
+                    ★★★★★
+                    <span>(124)</span>
+                </div>
+
+                <div class="product-bottom">
+
+                    <strong>₹2,499</strong>
+
+                    <button
+                        onclick="addToCart('Wireless Headphones', 2499)">
+                        +
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- SNEAKERS -->
+
+        <div class="product-card" data-category="fashion">
+
+            <div class="product-image">
+
+                <span class="discount">-15%</span>
+
+                <img
+                    src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80"
+                    alt="Urban Sneakers"
+                >
+
+            </div>
+
+            <div class="product-info">
+
+                <span class="product-category">
+                    FASHION
+                </span>
+
+                <h3>Urban Sneakers</h3>
+
+                <div class="rating">
+                    ★★★★★
+                    <span>(89)</span>
+                </div>
+
+                <div class="product-bottom">
+
+                    <strong>₹1,899</strong>
+
+                    <button
+                        onclick="addToCart('Urban Sneakers', 1899)">
+                        +
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- SMART WATCH -->
+
+        <div class="product-card" data-category="electronics">
+
+            <div class="product-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1544117519-31a4b719223d?auto=format&fit=crop&w=800&q=80"
+                    alt="Smart Watch"
+                >
+
+            </div>
+
+            <div class="product-info">
+
+                <span class="product-category">
+                    ELECTRONICS
+                </span>
+
+                <h3>Smart Watch Pro</h3>
+
+                <div class="rating">
+                    ★★★★☆
+                    <span>(67)</span>
+                </div>
+
+                <div class="product-bottom">
+
+                    <strong>₹3,299</strong>
+
+                    <button
+                        onclick="addToCart('Smart Watch Pro', 3299)">
+                        +
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- BACKPACK -->
+
+        <div class="product-card" data-category="fashion">
+
+            <div class="product-image">
+
+                <span class="discount">-25%</span>
+
+                <img
+                    src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&q=80"
+                    alt="Minimal Backpack"
+                >
+
+            </div>
+
+            <div class="product-info">
+
+                <span class="product-category">
+                    FASHION
+                </span>
+
+                <h3>Minimal Backpack</h3>
+
+                <div class="rating">
+                    ★★★★★
+                    <span>(142)</span>
+                </div>
+
+                <div class="product-bottom">
+
+                    <strong>₹1,299</strong>
+
+                    <button
+                        onclick="addToCart('Minimal Backpack', 1299)">
+                        +
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+        <!-- DEAL -->
+
+        <section class="deal" id="deals">
+
+            <div>
+
+                <span class="small-label">
+                    LIMITED TIME
+                </span>
+
+                <h2>
+                    Something special<br>
+                    is waiting for you.
+                </h2>
+
+                <p>
+                    Get up to 40% off selected products.
+                </p>
+
+                <button class="primary-button">
+                    Explore Deals →
+                </button>
+
+            </div>
+
+            <div class="deal-number">
+                40%
+                <span>OFF</span>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- CART -->
+
+<!-- CART -->
+
+<div class="cart-overlay" id="cartOverlay">
+
+    <div class="cart">
+
+        <div class="cart-header">
+
+            <h2>Your Cart</h2>
+
+            <button onclick="closeCart()">×</button>
+
+        </div>
+
+        <div id="cartItems">
+
+            <p class="empty-cart">
+                Your cart is empty.
+            </p>
+
+        </div>
+
+        <div class="cart-footer">
+
+            <div class="cart-total-row">
+                <span>Total</span>
+                <strong id="cartTotal">₹0</strong>
+            </div>
+
+            <button
+                class="primary-button checkout-button"
+                onclick="checkout()"
+            >
+                Checkout
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+    <footer>
+
+        <div class="logo">BYEIT</div>
+
+        <p>
+            Simple shopping. Better choices.
+        </p>
+
+        <span>
+            © 2026 BYEIT
+        </span>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
