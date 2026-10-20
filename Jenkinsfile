@@ -75,8 +75,27 @@ ${env.BUILD_URL}console
             )
         }
 
-        success {
-            echo 'BYEIT Selenium tests passed successfully.'
-        }
+       success {
+    mail(
+        to: 'YOUR_GMAIL@gmail.com',
+        subject: "SUCCESS: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+        body: """Hello,
+
+Your BYEIT automated testing pipeline has completed successfully!
+
+Job: ${env.JOB_NAME}
+Build Number: #${env.BUILD_NUMBER}
+Status: SUCCESS
+
+All Selenium tests passed.
+
+View the build details:
+${env.BUILD_URL}
+
+Regards,
+BYEIT Jenkins Pipeline
+"""
+    )
+}
     }
 }
