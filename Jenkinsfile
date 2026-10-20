@@ -5,9 +5,9 @@ pipeline {
         timestamps()
     }
 
-    triggers {
-        cron('H 9 * * *')
-    }
+        triggers {
+            cron('H 9 * * *')
+        }
 
     environment {
         PYTHON = 'C:\\Users\\Ram\\AppData\\Local\\Programs\\Python\\Python312\\python.exe'
@@ -77,7 +77,7 @@ ${env.BUILD_URL}console
 
        success {
     mail(
-        to: 'YOUR_GMAIL@gmail.com',
+        to: 'aratrikasharma86@gmail.com',
         subject: "SUCCESS: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
         body: """Hello,
 
