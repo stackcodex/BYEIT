@@ -1,4 +1,3 @@
-
 pipeline {
     agent any
 
@@ -61,7 +60,23 @@ pipeline {
         }
 
         failure {
-            echo 'The pipeline failed. Gmail notification will be configured next.'
+            mail(
+                to: 'aratrikasharma86@gmail.com',
+                subject: "FAILED: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                body: """The BYEIT automated testing pipeline has failed.
+
+Job: ${env.JOB_NAME}
+Build: #${env.BUILD_NUMBER}
+Result: ${currentBuild.currentResult}
+
+Check the Jenkins console output for details:
+${env.BUILD_URL}console
+"""
+            )
+        }
+
+        success {
+            echo 'BYEIT Selenium tests passed successfully.'
         }
     }
 }
