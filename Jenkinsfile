@@ -10,6 +10,10 @@ pipeline {
         cron('H 9 * * *')
     }
 
+    environment {
+        PYTHON = 'C:\\Users\\Ram\\AppData\\Local\\Programs\\Python\\Python312\\python.exe'
+    }
+
     stages {
         stage('Checkout from GitHub') {
             steps {
@@ -20,8 +24,8 @@ pipeline {
 
         stage('Install Python Dependencies') {
             steps {
-                bat 'python --version'
-                bat 'python -m pip install -r python-tests\\requirements.txt'
+                bat '"%PYTHON%" --version'
+                bat '"%PYTHON%" -m pip install -r python-tests\\requirements.txt'
             }
         }
 
@@ -32,7 +36,7 @@ pipeline {
 
                     def result = bat(
                         returnStatus: true,
-                        script: 'python -m pytest python-tests -v -s --junitxml=python-tests\\reports\\pytest-results.xml'
+                        script: '"%PYTHON%" -m pytest python-tests -v -s --junitxml=python-tests\\reports\\pytest-results.xml'
                     )
 
                     junit(
