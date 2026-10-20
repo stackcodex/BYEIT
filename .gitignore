@@ -38,3 +38,9 @@ Thumbs.db
 # ================================
 
 backend.zip
+
+
+python-tests/venv/
+python-tests/__pycache__/
+python-tests/.pytest_cache/
+python-tests/reports/
